@@ -20,8 +20,4 @@ jobs:
       - name: Java Maven release
         uses: qcastel/github-actions-maven-release@v1.12.31
 
-        with:
-          java-version: 8
-          maven-version: ${{ matrix.maven }}
-
       - run: mvn -V ...
