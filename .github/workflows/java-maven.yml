@@ -4,13 +4,23 @@ on:
   workflow_dispatch:
 
 
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
-        node-version: [14.x]
+        maven: [ '3.5.4', '3.6.3', '3.8.6' ]
+
+    name: Maven ${{ matrix.maven }} sample
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@< version >
+        with:
+          java-version: 8
+          maven-version: ${{ matrix.maven }}
+
+      - run: mvn -V ...
