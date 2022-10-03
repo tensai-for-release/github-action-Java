@@ -11,14 +11,14 @@ jobs:
 
     strategy:
       matrix:
-        maven: [ '3.5.4', '3.6.3', '3.8.6' ]
+        maven: [ '3.5.4' ]
 
     name: Maven ${{ matrix.maven }} sample
 
     steps:
 
-      - name: Setup Maven Action
-        uses: s4u/setup-maven-action@< version >
+    - name: Setup Maven Action
+      uses: s4u/setup-maven-action@v1.5.0
         with:
           java-version: 8
           maven-version: ${{ matrix.maven }}
