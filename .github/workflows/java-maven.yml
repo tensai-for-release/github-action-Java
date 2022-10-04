@@ -47,5 +47,8 @@ jobs:
     needs: [publish]
     steps:
     - uses: actions/checkout@v2
-    - name: Codacy Analysis CLI
-      uses: codacy/codacy-analysis-cli-action@v4.2.0        
+    - name: Code Coverage
+      uses: themichaelhall/check-code-coverage@v1
+      with:
+        report: coverage.xml
+        required-percentage: 80    
