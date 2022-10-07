@@ -61,7 +61,6 @@ jobs:
           sarif_file: snyk.sarif 
   veracode-dependency-scan:
     runs-on: ubuntu-latest
-    name: Scan repository for Issues
     needs: [SAST-Snyk]
     steps:
       - name: Checkout
